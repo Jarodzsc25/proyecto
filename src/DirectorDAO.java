@@ -8,7 +8,7 @@ public class DirectorDAO {
         try(Connection conexion= db_conection.get_conConnetion()){
             PreparedStatement ps = null;
             try {
-                String quary="INSERT INTO `proyecto`.`director` (`nombre`, `apellido1`, `apellido2`, `email`, `telefono`) VALUES ('?', '?', '?', '?', '?'); ";
+                String quary="INSERT INTO director (nombre, apellido1, apellido2, email, telefono) VALUES (?, ?, ?, ?, ?) ";
                 ps=conexion.prepareStatement(quary);
                 ps.setString(1, director.getNombre());
                 ps.setString(2, director.getApellido1());
@@ -16,6 +16,7 @@ public class DirectorDAO {
                 ps.setString(4, director.getEmail());
                 ps.setString(5, director.getTelefono());
                 ps.executeUpdate();
+                System.out.println("Insert exitoso");
             }catch (SQLException ex){
                 System.out.println(ex);
             }

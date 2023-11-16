@@ -10,6 +10,7 @@ public class coneccion {
             if(conection!=null){
                 System.out.println("primera parte lista");
             }
+            System.out.println("Conexion exitosa");
         }catch (SQLException e){
             System.out.println("fallaste : "+e);
         }
