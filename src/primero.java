@@ -9,6 +9,7 @@ public class primero {
         }*/
         DirectorService.crearDirector();
         DocentesService.crearDocentes();
+        MateriasService.crearMaterias();
     }
 
 }
