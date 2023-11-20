@@ -1,5 +1,6 @@
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class MateriasDAO {
@@ -27,7 +28,28 @@ public class MateriasDAO {
         }
     }
     public static void leerMaterias(){
+        coneccion db_conexion = new coneccion();
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        try(Connection conexion = db_conexion.get_conConnetion()){
+            String query= "SELECT * FROM materias ";
+            ps = conexion.prepareStatement(query);
+            rs = ps.executeQuery();
 
+            while (rs.next()){
+                System.out.println("id: "+rs.getInt("id"));
+                System.out.println("primera materia: "+rs.getString("materia1"));
+                System.out.println("segunda materia: "+rs.getString("materia2"));
+                System.out.println("tercera materia: "+rs.getString("materia3"));
+                System.out.println("cuarta materia: "+rs.getString("materia4"));
+                System.out.println("quinta materia: "+rs.getString("materia5"));
+                System.out.println("sexta materia: "+rs.getString("materia6"));
+                System.out.println("septima materia: "+rs.getString("materia7"));
+                System.out.println("*****");
+            }
+        }catch (SQLException e){
+            System.out.println(e);
+        }
     }
     public static void borrarMaterias(int id){
 

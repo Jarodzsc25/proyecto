@@ -35,7 +35,7 @@ public class MateriasService {
         MateriasDAO.crearMaterias(materias);
     }
     public static void listarMaterias(){
-
+    MateriasService.listarMaterias();
     }
     public static void borrarMaterias(){
 

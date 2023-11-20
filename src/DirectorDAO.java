@@ -40,7 +40,7 @@ public class DirectorDAO {
                 System.out.println("apellido: "+rs.getString("apellido1")+"  "+rs.getString("apellido2"));
                 System.out.println("email: "+rs.getString("email"));
                 System.out.println("telefono: "+rs.getString("telefono"));
-
+                System.out.println("*****");
             }
         }catch (SQLException e){
             System.out.println(e);
