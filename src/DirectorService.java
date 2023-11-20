@@ -27,7 +27,7 @@ public class DirectorService {
         DirectorDAO.crearDirector(director);
     }
     public static void listarDirector(){
-
+    DirectorDAO.leerDirector();
     }
     public static void borrarDirector(){
 
