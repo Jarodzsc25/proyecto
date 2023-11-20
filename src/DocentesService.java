@@ -27,7 +27,7 @@ public class DocentesService {
         DocentesDAO.crearDocentes(docentes);
     }
     public static void listarDocentes(){
-        DocentesService.listarDocentes();
+        DocentesDAO.leerDocentes();
     }
     public static void borrarDocentes(){
 
