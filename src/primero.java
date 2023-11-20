@@ -8,8 +8,8 @@ public class primero {
             System.out.println(e);
         }*/
         DirectorService.crearDirector();
-        DocentesService.crearDocentes();
-        MateriasService.crearMaterias();
+      DocentesService.crearDocentes();
+      MateriasService.crearMaterias();
     }
 
 }

@@ -8,7 +8,7 @@ public class MateriasDAO {
         try(Connection conexion= db_conection.get_conConnetion()){
             PreparedStatement ps = null;
             try {
-                String quary="INSERT INTO materias (materia1,materia2,materia3,materia4,materia5,materia,6,materia7) VALUES (?,?,?, ?, ?, ?, ?) ";
+                String quary="INSERT INTO materias (materia1,materia2,materia3,materia4,materia5,materia6,materia7) VALUES (?,?,?, ?, ?, ?, ?) ";
                 ps=conexion.prepareStatement(quary);
                 ps.setString(1, materias.getMateria1());
                 ps.setString(2, materias.getMateria2());
