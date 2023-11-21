@@ -54,6 +54,7 @@ public class DocentesDAO {
                 String quary = "DELETE FROM docentes WHERE  id = ?";
                 ps = conexion.prepareStatement(quary);
                 ps.setInt(1,id);
+                ps.executeUpdate();
                 System.out.println(" el dato fue borrado exitosamente");
             }catch (SQLException e){
                 System.out.println(e);
