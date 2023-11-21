@@ -47,7 +47,21 @@ public class DocentesDAO {
         }
     }
     public static void borrarDocentes(int id){
-
+        coneccion db_conexion = new coneccion();
+        try(Connection conexion = db_conexion.get_conConnetion()){
+            PreparedStatement ps=null;
+            try{
+                String quary = "DELETE FROM docentes WHERE  id = ?";
+                ps = conexion.prepareStatement(quary);
+                ps.setInt(1,id);
+                System.out.println(" el dato fue borrado exitosamente");
+            }catch (SQLException e){
+                System.out.println(e);
+                System.out.println("el dato no se puedo borrar");
+            }
+        }catch (SQLException e){
+            System.out.println(e);
+        }
     }
     public static void actializarDocente(Docentes docentes){
 

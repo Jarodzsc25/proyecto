@@ -30,7 +30,10 @@ public class DocentesService {
         DocentesDAO.leerDocentes();
     }
     public static void borrarDocentes(){
-
+        Scanner sc=new Scanner(System.in);
+        System.out.print("indica el id que desea borrar");
+        int id_doscentes = sc.nextInt();
+        DocentesDAO.borrarDocentes(id_doscentes);
     }
     public static void editarDocentes(){
 

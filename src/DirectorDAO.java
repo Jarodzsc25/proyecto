@@ -51,8 +51,8 @@ public class DirectorDAO {
         try(Connection conexion = db_conexion.get_conConnetion()){
             PreparedStatement ps=null;
             try{
-                String query = "DELETE FROM director WHERE  id = ?";
-                ps = conexion.prepareStatement(query);
+                String quary = "DELETE FROM director WHERE  id = ?";
+                ps = conexion.prepareStatement(quary);
                 ps.setInt(1,id);
                 System.out.println(" el dato fue borrado exitosamente");
             }catch (SQLException e){
