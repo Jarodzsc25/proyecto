@@ -58,6 +58,22 @@ public class MateriasDAO {
         }
     }
     public static void actializarMaterias(Materias materias){
-
+        coneccion db_conexion = new coneccion();
+        try (Connection conexion = db_conexion.get_conConnetion()) {
+            PreparedStatement ps;
+            try{
+                String query = "UPDATE materias SET materia = ? WHERE  id = ? ";
+                ps = conexion.prepareStatement(query);
+                ps.setString(1, materias.getMateria());
+                ps.setInt(2,materias.getId());
+                ps.executeUpdate();
+                System.out.println("cambio exitoso");
+            } catch (SQLException e) {
+                System.out.println(e);
+                System.out.println("error");
+            }
+        } catch (SQLException e){
+            System.out.println(e);
+        }
     }
 }

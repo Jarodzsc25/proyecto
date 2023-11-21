@@ -65,6 +65,26 @@ public class DocentesDAO {
         }
     }
     public static void actializarDocente(Docentes docentes){
-
+        coneccion db_conexion = new coneccion();
+        try (Connection conexion = db_conexion.get_conConnetion()) {
+            PreparedStatement ps;
+            try{
+                String query = "UPDATE docentes SET nombre = ?, apellido1 = ? , apellido2 = ? , email = ? , telefono = ?  WHERE  id = ? ";
+                ps = conexion.prepareStatement(query);
+                ps.setString(1, docentes.getNombre());
+                ps.setString(2, docentes.getApellido1());
+                ps.setString(3, docentes.getApellido2());
+                ps.setString(4, docentes.getEmail());
+                ps.setString(5, docentes.getTelefono());
+                ps.setInt(6,docentes.getId());
+                ps.executeUpdate();
+                System.out.println("cambio exitoso");
+            } catch (SQLException e) {
+                System.out.println(e);
+                System.out.println("error");
+            }
+        } catch (SQLException e){
+            System.out.println(e);
+        }
     }
 }

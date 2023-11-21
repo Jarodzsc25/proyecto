@@ -20,6 +20,15 @@ public class MateriasService {
         MateriasDAO.borrarMaterias(id_materias);
     }
     public static void editarMaterias(){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("escribe la nuevo materia: ");
+        String materia = sc.nextLine();
+        System.out.println("indica el id de la materia que desea editar: ");
+        int id_materia = sc.nextInt();
 
+        Materias materias  = new Materias();
+        materias.setMateria(materia);
+        materias.setId(id_materia);
+        MateriasDAO.actializarMaterias(materias);
     }
-}
+    }

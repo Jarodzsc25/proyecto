@@ -68,6 +68,27 @@ public class DirectorDAO {
     }
 
     public static void actializarDirector(Director director) {
+        coneccion db_conexion = new coneccion();
+        try (Connection conexion = db_conexion.get_conConnetion()) {
+            PreparedStatement ps;
+            try{
+                String query = "UPDATE director SET nombre = ?, apellido1 = ? , apellido2 = ? , email = ? , telefono = ?  WHERE  id = ? ";
+                ps = conexion.prepareStatement(query);
+                ps.setString(1, director.getNombre());
+                ps.setString(2, director.getApellido1());
+                ps.setString(3, director.getApellido2());
+                ps.setString(4, director.getEmail());
+                ps.setString(5, director.getTelefono());
+                ps.setInt(6,director.getId());
+                ps.executeUpdate();
+                System.out.println("cambio exitoso");
+            } catch (SQLException e) {
+            System.out.println(e);
+            System.out.println("error");
+        }
+        } catch (SQLException e){
+            System.out.println(e);
+        }
 
     }
 }

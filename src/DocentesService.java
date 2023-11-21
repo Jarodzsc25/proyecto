@@ -36,6 +36,34 @@ public class DocentesService {
         DocentesDAO.borrarDocentes(id_doscentes);
     }
     public static void editarDocentes(){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("escribe el nuevo nombre: ");
+        String nombre = sc.nextLine();
 
+        System.out.print("escribe el nuevo apellido: ");
+        String apellido1 = sc.nextLine();
+
+        System.out.print("escribe el nuevo apellido: ");
+        String apellido2 = sc.nextLine();
+
+        System.out.print("escribe el nuevo email: ");
+        String email= sc.nextLine();
+
+        System.out.print("escribe el nuevo telefono: ");
+        String telefono = sc.nextLine();
+
+        System.out.println("indica el id del docente que desea editar: ");
+        int id_docente = sc.nextInt();
+
+        Docentes docente = new Docentes();
+        docente.setNombre(nombre);
+        docente.setApellido1(apellido1);
+        docente.setApellido2(apellido2);
+        docente.setEmail(email);
+        docente.setTelefono(telefono);
+        docente.setId(id_docente);
+
+        DocentesDAO.actializarDocente(docente);
     }
-}
+    }
+
