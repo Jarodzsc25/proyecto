@@ -47,7 +47,21 @@ public class DirectorDAO {
         }
     }
     public static void borrarDirector(int id){
-
+        coneccion db_conexion = new coneccion();
+        try(Connection conexion = db_conexion.get_conConnetion()){
+            PreparedStatement ps=null;
+            try{
+                String query = "DELETE FROM director WHERE  id = ?";
+                ps = conexion.prepareStatement(query);
+                ps.setInt(1,id);
+                System.out.println(" el dato fue borrado exitosamente");
+            }catch (SQLException e){
+                System.out.println(e);
+                System.out.println("el dato no se puedo borrar");
+            }
+        }catch (SQLException e){
+            System.out.println(e);
+        }
     }
     public static void actializarDirector(Director director){
 

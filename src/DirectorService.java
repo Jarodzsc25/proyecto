@@ -30,7 +30,10 @@ public class DirectorService {
     DirectorDAO.leerDirector();
     }
     public static void borrarDirector(){
-
+        Scanner sc=new Scanner(System.in);
+        System.out.print("indica el id que desea borrar");
+        int id_director = sc.nextInt();
+        DirectorDAO.borrarDirector(id_director);
     }
     public static void editarDirector(){
 

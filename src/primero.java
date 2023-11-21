@@ -33,6 +33,7 @@ public class primero {
         Scanner sc =new Scanner(System.in);
         int opcion =0;
         do{
+            System.out.println("-----------------------");
             System.out.println("1.- Crear Director");
             System.out.println("2.- Listar Director");
             System.out.println("3.- Editar Director");
@@ -62,6 +63,7 @@ public class primero {
         Scanner sc =new Scanner(System.in);
         int opcion =0;
         do{
+            System.out.println("------------------");
             System.out.println("1.- Crear Docente");
             System.out.println("2.- Listar Docente");
             System.out.println("3.- Editar Docente");
@@ -91,6 +93,7 @@ public class primero {
         Scanner sc =new Scanner(System.in);
         int opcion =0;
         do{
+            System.out.println("----------------------");
             System.out.println("1.- Crear Materias");
             System.out.println("2.- Listar Materias");
             System.out.println("3.- Editar Materias");
