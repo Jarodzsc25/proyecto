@@ -9,15 +9,9 @@ public class MateriasDAO {
         try(Connection conexion= db_conection.get_conConnetion()){
             PreparedStatement ps = null;
             try {
-                String quary="INSERT INTO materias (materia1,materia2,materia3,materia4,materia5,materia6,materia7) VALUES (?,?,?, ?, ?, ?, ?) ";
+                String quary="INSERT INTO materias (materia) VALUES (?) ";
                 ps=conexion.prepareStatement(quary);
-                ps.setString(1, materias.getMateria1());
-                ps.setString(2, materias.getMateria2());
-                ps.setString(3, materias.getMateria3());
-                ps.setString(4, materias.getMateria4());
-                ps.setString(5, materias.getMateria5());
-                ps.setString(6, materias.getMateria6());
-                ps.setString(7, materias.getMateria7());
+                ps.setString(1, materias.getMateria());
                 ps.executeUpdate();
                 System.out.println("Insert exitoso");
             }catch (SQLException ex){
@@ -38,13 +32,7 @@ public class MateriasDAO {
 
             while (rs.next()){
                 System.out.println("id: "+rs.getInt("id"));
-                System.out.println("primera materia: "+rs.getString("materia1"));
-                System.out.println("segunda materia: "+rs.getString("materia2"));
-                System.out.println("tercera materia: "+rs.getString("materia3"));
-                System.out.println("cuarta materia: "+rs.getString("materia4"));
-                System.out.println("quinta materia: "+rs.getString("materia5"));
-                System.out.println("sexta materia: "+rs.getString("materia6"));
-                System.out.println("septima materia: "+rs.getString("materia7"));
+                System.out.println("materia añadida: "+rs.getString("materia"));
                 System.out.println("*****");
             }
         }catch (SQLException e){
